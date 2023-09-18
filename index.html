@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Layout Master</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <style>
+        /* Additional inline CSS for smooth scroll effect */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Style for the "Check out our products" section */
+
+    </style>
+</head>
+
+<body>
+    <nav class="zone red sticky">
+        <ul class="main-nav">
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li class="push"><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container"><img class="cover" src="./img/Logo.png"></div>
+
+    <div class="about-box">
+        <div class="about-section" id="about">
+            <h1>About Us</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+
+    <!-- Display the "Check out our products" section after the "About Us" section -->
+    <div class="products-heading" id="products">
+        <div class="zone red grid-wrapper">
+            <!-- Image boxes continue here -->
+            <div class="box zone center">
+                <img src="./img/diamond ring-1.png">
+                <p>Diamond earrings are like tiny, twinkling stars hanging from the ears.</p>
+            </div>
+            <div class="box zone">
+                <img src="./img/diamond ring-3.png">
+                <p>Elegance and beauty come together in our diamond rings.</p>
+            </div>
+            <div class="box zone">
+                <img src="./img/diamond ring-4.png">
+                <p>Adorn yourself with the brilliance of our diamond jewelry.</p>
+            </div>
+            <div class="box zone">
+                <img src="./img/earrings-1.png">
+                <p>Earrings that add a touch of glamour to any outfit.</p>
+            </div>
+            <div class="box zone">
+                <img src="./img/couple rings.png">
+                <p>Celebrate love with our exquisite couple rings.</p>
+            </div>
+            <div class="box zone">
+                <img src="./img/necklace.png">
+                <p>Our necklaces are crafted to perfection, just for you.</p>
+            </div>
+            <div class="box zone">
+                <img src="./img/diamon ring-6.png">
+                <p>Shine bright like a diamond with our stunning rings.</p>
+            </div>
+            <!-- Add more image boxes as needed -->
+        </div>
+    </div>
+
+    <div class="team" id="team">
+        <h3>At <span style="font-size: 25px;">Jujubee Jewellery</span>, our success is driven by the passion and dedication
+            of our talented team members. Leading the way is X, our visionary designer, who brings creativity and
+            innovation to every exquisite piece. Y, our meticulous gemologist, ensures that each gemstone is handpicked
+            for its quality and brilliance. Together, they craft jewelry that tells stories, captures emotions, and
+            reflects the beauty of life's precious moments.</h3>
+    </div>
+    <div id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Got questions or feedback? We'd love to hear from you! Contact our dedicated team for assistance.</p>
+
+        <div class="contact-details">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p><strong>Address:</strong> 123 Main Street, Hyderabad</p>
+                <p><strong>Email:</strong> info@jujubeejewellery.com</p>
+                <p><strong>Phone:</strong> +0 (123) 456-7890</p>
+            </div>
+
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        // JavaScript for smooth scrolling when clicking on navigation links
+        const navLinks = document.querySelectorAll('.main-nav a');
+        const teamButton = document.querySelector('.team-button');
+        const contactButton = document.querySelector('.contact-button');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                // Calculate the target position just above the element
+                const offset = 15; // You can adjust this value to control the scroll offset
+                const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Smooth scroll for "Our Team" button
+        teamButton.addEventListener('click', e => {
+            e.preventDefault();
+            const teamSection = document.querySelector('.team');
+            const offset = 15; // You can adjust this value to control the scroll offset
+            const targetPosition = teamSection.getBoundingClientRect().top + window.scrollY - offset;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scroll for "Contact" button
+        contactButton.addEventListener('click', e => {
+            e.preventDefault();
+            const contactSection = document.querySelector('.contact-section');
+            const offset = 15; // You can adjust this value to control the scroll offset
+            const targetPosition = contactSection.getBoundingClientRect().top + window.scrollY - offset;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+</body>
+
+</html>
