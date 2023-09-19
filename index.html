@@ -5,12 +5,12 @@
     <title>jujubee jewellery</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
     <style>
-        /* Additional inline CSS for smooth scroll effect */
+        
         html {
             scroll-behavior: smooth;
         }
 
-        /* Style for the "Check out our products" section */
+        
 
     </style>
 </head>
@@ -38,10 +38,9 @@
         </div>
     </div>
 
-    <!-- Display the "Check out our products" section after the "About Us" section -->
     <div class="products-heading" id="products">
         <div class="zone red grid-wrapper">
-            <!-- Image boxes continue here -->
+            
             <div class="box zone center">
                 <img src="./img/diamond ring-1.png">
                 <p>Diamond earrings are like tiny, twinkling stars hanging from the ears.</p>
@@ -70,7 +69,6 @@
                 <img src="./img/diamon ring-6.png">
                 <p>Shine bright like a diamond with our stunning rings.</p>
             </div>
-            <!-- Add more image boxes as needed -->
         </div>
     </div>
 
@@ -114,7 +112,6 @@
 
 
     <script>
-        // JavaScript for smooth scrolling when clicking on navigation links
         const navLinks = document.querySelectorAll('.main-nav a');
         const teamButton = document.querySelector('.team-button');
         const contactButton = document.querySelector('.contact-button');
@@ -124,9 +121,7 @@
                 e.preventDefault();
                 const targetId = link.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
-
-                // Calculate the target position just above the element
-                const offset = 15; // You can adjust this value to control the scroll offset
+                const offset = 15; 
                 const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
 
                 window.scrollTo({
@@ -136,11 +131,10 @@
             });
         });
 
-        // Smooth scroll for "Our Team" button
         teamButton.addEventListener('click', e => {
             e.preventDefault();
             const teamSection = document.querySelector('.team');
-            const offset = 15; // You can adjust this value to control the scroll offset
+            const offset = 15; 
             const targetPosition = teamSection.getBoundingClientRect().top + window.scrollY - offset;
 
             window.scrollTo({
@@ -149,11 +143,10 @@
             });
         });
 
-        // Smooth scroll for "Contact" button
         contactButton.addEventListener('click', e => {
             e.preventDefault();
             const contactSection = document.querySelector('.contact-section');
-            const offset = 15; // You can adjust this value to control the scroll offset
+            const offset = 15; 
             const targetPosition = contactSection.getBoundingClientRect().top + window.scrollY - offset;
 
             window.scrollTo({
